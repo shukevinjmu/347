@@ -3,7 +3,7 @@ html {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     background-color: whitesmoke;
-    background-image: url("https://i.imgur.com/6GsdSnm.png");
+    background-image: url(images/cloudbg.png);
     background-size: 50%;
 }
 body{
