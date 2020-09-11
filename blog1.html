@@ -1,13 +1,131 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Blog 1 - Kevin Shu</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="blog.css">
-</head>
-<body>
+    <link rel="stylesheet" href="blog1.css">
     
+</head>
+
+<body>
+    <div class ="cursor"></div>
+    <div class="navbar-container">
+        <ul class="navbar">
+            <li class="navbar-link"><a href="index.html">Index</a></li>
+            <li class="navbar-link"><a href="blog1.html">Recent Post</a></li>
+            <li class="navbar-link"><a href="index.html">About</a></li>
+            <li class="navbar-link"><a href="index.html">Contact</a></li>
+            <li class="seperator">———————</li>
+            <li class="navbar-link"><a href="blog1.html">Blog 1</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="blog-content">
+            <h1>Blog post #1: Cursor Animations</h1>
+            <p> My inspiration for this post came from stumbling upon my older
+                brother's laptop from the late 2000's. Although it's long been dead,
+                the only thing that I could recall from it's grime-encrusted keys
+                were the annoying cursor effects he downloaded. The type of effects
+                that would cause an epileptic seizure.
+            </p>
+            <p>
+                I wanted to recreate this cursor effect from a by-gone era. While I don't plan to cause a seizure, it
+                inspired me to try something similar with CSS animations.
+            </p>
+
+            <p>
+                I recalled seeing CSS Animations on <a href=https://www.w3schools.com/css/css3_animations.asp>W3
+                    Schools</a>. So this is where I first started looking into how to recreate it.
+                <br>
+                Here is a simple snippet for the type of effect I wanted to apply to my cursor in the form of a box:
+                <br>
+            </p>
+
+            <div class=rainbow-box></div>
+            <p>
+                The code snippet below shows a basic animation using
+                <a href=https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp>@keyframes</a> which gradually
+                changes one CSS style to another.
+            </p>
+            <pre>
+                    <code>
+@keyframes example {
+    15% {background-color: red;}
+    30% {background-color: orange;}
+    45% {background-color: yellow;}
+    60% {background-color: green;}
+    75% {background-color: blue;}
+    90% {background-color: indigo;}
+    100% {background-color: violet;}
+    }
+</code>
+            </pre>
+            <p> This next part displays how to add a animation to a simple box div element.</p>
+            <pre>
+                    <code>
+.rainbow-box {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    }
+                    </code>
+                </pre>
+                <p>
+                    This all seemed simple enough, and I thought that I would just have to apply the same thing to
+                    the cursor element instead of a box. Stupidly, I didn't bother to read the cursor property definition.
+                </p>
+                <img src="images/badcursor.PNG" alt="Animatable: no :(">
+                <p> This error was a learning lesson in of itself. I shouldn't assume things are going to be 
+                    convenient for me, especially in niche scenarios.
+                    <br>
+                    My next step was to simply google what I wanted (the true solution to everything). 
+                    <br>Upon doing so I stumbled upon <a href="https://www.youtube.com/watch?time_continue=445&v=TpwpAYi-p2w&feature=emb_title">this video</a> 
+                    which did what I wanted but with Javascript. The only problem was that I haven't worked with Javascript beyond copy and pasting
+                    simple scripts without looking into how they worked.
+                </p>
+
+                <p>
+                    Luckily, after reviewing the video, the entire process seemed easy. <br>
+                    Below is the Javascript used to track the mouse:
+                </p>
+                <pre>
+                    <code>
+let mouseCursor = document.querySelector(".cursor");
+window.addEventListener('mousemove', cursor);
+                        
+function cursor(e){
+    mouseCursor.style.top = e.pageY + 'px';
+    mouseCursor.style.left = e.pageX + 'px';
+}
+                        
+                    </code>
+                </pre>
+                <p>
+                    After creating the listener and function, I simply had to create the .cursor in the css file
+                    and apply the annoying rainbow effect. As you hopefully can see, it was a success!
+                </p>
+                <p>
+                    This entire process gave me a refresher on Javascript in a very simple and fun way. Although I don't plan to ever use something as ugly and annoying as this mouse cursor, at least I now know how to do it.
+                </p>
+
+                <p>
+                    - Kevin Shu, CS 347 section 1
+                </p>
+                <div class=end-break></div>
+                
+        </div>
+    </div>
+
+    <script src="blog1.js"></script>
 </body>
+
 </html>

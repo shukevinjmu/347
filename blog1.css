@@ -1,0 +1,41 @@
+body{
+    cursor:none;
+}
+.rainbow-box {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes example {
+    15%   {background-color: red;}
+    30%   {background-color: orange;}
+    45%  {background-color: yellow;}
+    60% {background-color: green;}
+    75%  {background-color: blue;}
+    90%  {background-color: indigo;}
+    100%  {background-color: violet;}
+  }
+.cursor{
+    border: 0px;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background-color: none;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transition-property: background, transform;
+
+}
+
+
