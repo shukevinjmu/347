@@ -65,7 +65,7 @@
     }
 </code>
             </pre>
-            <p> This next part displays how to add a animation to a simple box div element.</p>
+            <p> This next part displays how to add an animation to a simple box div element.</p>
             <pre>
                     <code>
 .rainbow-box {
@@ -110,7 +110,16 @@ function cursor(e){
                     </code>
                 </pre>
                 <p>
-                    After creating the listener and function, I simply had to create the .cursor in the css file
+                    In the above code, I create a variable called "mouseCursor" which represents the class
+                    where I apply the animation. Next, I added a listener (an item that tracks[listens for]
+                    when a "mousemove" event occurs).
+                    <br>
+                    When an event occurs(when the mouse moves), the function catches the event and runs. This causes the mouseCursor's style
+                    for positioning to be modified. We then use this information to place the "mouseCursor" on top of the regular cursor.
+                     This is done through the "pageY" and "pageX" attributes we get from the event.
+                </p>
+                <p>
+                    After creating the listener and function, I simply had to create ".cursor" in the css file
                     and apply the annoying rainbow effect. As you hopefully can see, it was a success!
                 </p>
                 <p>
