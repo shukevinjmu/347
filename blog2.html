@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blog 2 - Kevin Shu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='blog2.css'>
+    <link rel="stylesheet" href="blog.css">
+
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+    <div class="navbar-container">
+        <ul class="navbar">
+            <li class="navbar-link"><a href="index.html">Index</a></li>
+            <li class="navbar-link"><a href="blog1.html">Recent Post</a></li>
+            <li class="navbar-link"><a href="index.html">About</a></li>
+            <li class="navbar-link"><a href="index.html">Contact</a></li>
+            <li class="seperator">———————</li>
+            <li class="navbar-link"><a href="blog1.html">Blog 1</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main-content">
+        <div class="blog-content">
+            <h1>
+                Blog post 2: JAvaScRiPT basICs
+            </h1>
+            <p>
+                In this blog post, I wanted to go over some JavaScript basics. To better retain the information, I
+                thought
+                it would be better to do so with some type of creative outlet.
+            </p>
+            <p>
+                My first idea was to create a randomized case generator for text. For example: <br> "Hello, my name is
+                Kevin", would turn into something like: "HElLo, MY nAMe iS keviN".
+            </p>
+            <p>
+                To do so, I went to the W3 schools javascript page and looked for a couple of things.
+                I imagined I would need some sort of randomizer, and a string split/join or a loop.
+            </p>
+            <p>
+                Since I either had to make the letters upper or lower case, I created a binary randomizer which I
+                learned through <a href="https://www.w3schools.com/js/js_random.asp">W3 schools</a>.
+            </p>
+            <pre>
+                <code>
+function binaryRandom(){
+    return Math.round(Math.random());
+}
+                </code>
+            </pre>
+            <p>
+                Next I needed to randomize the text to either be upper or lower case. To do so I used the
+                <a
+                    href="https://gomakethings.com/converting-strings-to-uppercase-and-lowercase-with-vanilla-javascript/#:~:text=JavaScript%20provides%20two%20helpful%20functions,converts%20a%20string%20to%20uppercase.">String.toLowerCase()
+                    and String.toUpperCase()</a> functions.<br>
+                After this, all it took was a simple <a
+                    href=https://medium.com/better-programming/how-to-iterate-through-strings-in-javascript-65c51bb3ace5>loop</a>
+                to iterate a string with the above functions. <br>
+                In the end I came up with this:
+            </p>
+            <pre>
+                <code>
+function randomCaseText(){
+    var input = document.getElementById("input").value;
+    var output = "";
+    for(const c of input){
+        output += binaryRandom() ? c.toUpperCase() : c.toLowerCase();
+    }
+    document.getElementById("output").innerHTML = output;
+}
+                </code>
+            </pre>
+
+            <p>
+                In the above code, I have two variables: one is for input of the text, and one is for the output of the
+                text. Next, I have a simple loop to go through the String.
+                Inside the loop, I set the output to either upper or lower case using the binaryRandom() function I
+                created above.
+                Lastly, I set the textarea of element id "output" to the modifed text output.
+            </p>
+            <p>
+                <input type="text" placeholder="Type input..." id="input">
+                <button type="button" onclick="randomCaseText();">Randomize!</button> <br>
+                <br>
+                <em id="output"></em>
+            </p>
+            <p>
+                While applying the code, I was excited to see that the input value was iterable. I dislike having to
+                split/join strings and then iterate, which is common in
+                certain other languages. Overall, this little exercise showed me how similar the principles of
+                javascript are to other languages. The only learning curve I've experienced seems
+                to be <a href=https://www.w3schools.com/jsref/dom_obj_document.asp>HTML DOM</a> references.
+            </p>
+
+            <p>
+                Since doing the above was simple, I decided to try implementing "zalgo" text. Zalgo text is the process
+                of combining regular letters with specific unicode
+                characters to create an amalgamated version in excess.
+            </p>
+            <pre>
+                <code>
+function zalgoCaseText() {
+    var input = document.getElementById("corruptInput").value;
+    var output = "";
+    var len;
+    for (const c of input) {
+        len = random(20, 1);
+        output += c;
+        for (let i = 0; i < len; i++) {
+            output += Z.chars[random(3, 1)][random(16, 1)];
+        }
+    }
+    document.getElementById("corruptOutput").innerHTML = output;
+}
+                </code>
+            </pre>
+
+            <p>
+                Not included in the above code, I added a new random function that specifies a range, and the Z char
+                array which contains the <a href=https://www.zalgotextgenerator.com/unicode>unicode to create zalgo text</a>.<br>
+                The code is mostly similar to randomCaseText(). The only difference is that I included a loop that
+                randomly adds between 1 and 20 zalgo characters
+                to each letter. The letter is then randomized as such: Z.chars["value between 0-3"]["value between
+                0-15"]<br>
+                The Z char array contains 3 arrays (one each position ex: zalgo top, zalgo mid, zalgo bottom), which
+                each have 15 zalgo characters.
+            </p>
+
+            <p>
+                <input type="text" placeholder="Type input..." id="corruptInput">
+                <button type="button" onclick="zalgoCaseText();">Corrupt!</button> <br>
+                <br>
+                <em id="corruptOutput"></em>
+            </p>
+
+            <p>
+                Applying these text effects was a fun way to review the basics. I remember going on google a few years
+                ago to find these annoying text effects for use
+                in multiplayer games. I now realize that those websites were actually pretty simple to make.
+            </p>
+            <p>
+                - Kevin Shu, CS 347 section 1
+            </p>
+
+
+            <div class=end-break></div>
+        </div>
+    </div>
+    <script src='blog2.js'></script>
+
+</body>
+
+</html>

@@ -11,7 +11,7 @@ html, body {
 
 .navbar-container{
     height: 100%;
-    width: 200px;
+    flex-basis: 195px;
     position: absolute;
     display: flex;
     top:0;
