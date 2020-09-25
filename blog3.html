@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blog 3 - Kevin Shu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='blog3.css'>
+    <link rel="stylesheet" href="blog.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+
+<body>
+    <div class="navbar-container">
+        <ul class="navbar">
+            <li class="navbar-link"><a href="index.html">Index</a></li>
+            <li class="navbar-link"><a href="blog3.html">Recent Post</a></li>
+            <li class="navbar-link"><a href="index.html">About</a></li>
+            <li class="navbar-link"><a href="index.html">Contact</a></li>
+            <li class="seperator">———————</li>
+            <li class="navbar-link"><a href="blog1.html">Blog 1</a></li>
+            <li class="navbar-link"><a href="blog2.html">Blog 2</a></li>
+            <li class="navbar-link"><a href="blog3.html">Blog 3</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main-content">
+        <div class="blog-content">
+            <h1>Blog post #3: MathJax</h1>
+            <p>Today's blog post focuses on MathJax! During yesterday's peer review time, you recommended that I take a
+                look at <a href="https://www.mathjax.org/#gettingstarted">MathJax</a> if I wanted to create
+                good looking Math text.
+            </p>
+            <p>
+                My initial thought was, "why should I use this over simply creating an image of the equations?". Since I
+                didn't know the answer, I went to google and found
+                <a href="https://www.youtube.com/watch?v=TairRxyy_Hs">this</a> video explaining why. In essence, it
+                showed that my initial method was flawed for accessibility
+                purposes. Things like screen readers would fail to interpret the img alt tag unless I wrote it in a 
+                specific format.
+            </p>
+            <p>
+                For the purposes of this blog post, I only integrated it on this webpage rather than on the server.
+            </p>
+            <pre>
+                <code>
+&lt;script src="https://polyfill.io/v3/polyfill.min.js?features=es6"&gt;&lt;/script&gt;
+&lt;id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;script&gt;
+                </code>
+            </pre>
+            <p>
+                From their webpage, I obtained the above script source which would let me use MathJax.
+            </p>
+            <p>
+                Next, I went to an <a href=https://www.codecogs.com/latex/eqneditor.php?latex=D>online LaTeX Equation editor</a> since I haven't worked with it in a while. 
+                For this purpose, I wanted to implement the quadratic equation. <br>
+                From what I understood from the <a href="https://www.mathjax.org/#gettingstarted">MathJax</a> site, I just had to add the LaTex text between \\(  and \) or
+                \\[ and \] in my html.<br>
+                For example:
+            </p>
+            <pre>
+                <code>
+\(\mathrm{x= \frac{-b\pm \sqrt{b^{2}} -4ac}{2a}}\)
+                </code>
+            </pre>
+            <p>
+                The result of this code is then shown below: <br>
+                \(\mathrm{x= \frac{-b\pm \sqrt{b^{2}} -4ac}{2a}}\)
+            </p>
+
+            
+            <pre>
+                <code>
+\[\mathrm{x= \frac{-b\pm \sqrt{b^{2}} -4ac}{2a}}\]
+                </code>
+            </pre>
+            <p>
+                With the square brackets, the following is produced: <br>
+                \[\mathrm{x= \frac{-b\pm \sqrt{b^{2}} -4ac}{2a}}\]
+            </p>
+
+            <p>
+                Writing this blog post made me reflect on the job of a web developer. <br>Initially, I thought it was all about creating a good looking,
+                non-bloated, and informative webpage. <br>I previously did not consider accessibility as a main factor which is almost essential
+                for any education based page.
+            </p>
+
+            <p>
+                I'm glad that you told me about this tool, and I look foward to seeing what other tools exist that can improve a website(I think it would be a cool
+                idea to have a page lisiting similar resources if you know of any for project 2 as I am sure others).
+            </p>
+            <p>
+                - Kevin Shu, CS 347 section 1
+            </p>
+
+            <div class=end-break></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
