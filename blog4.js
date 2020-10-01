@@ -8,5 +8,5 @@ submit.addEventListener('click', () =>{
         captchaVerify.innerHTML = "Congratulations! you are not a robot.";
         alert("This is doing something");
     }
-    alert("This is doing something");
+    alert("This is doing something1");
 } )
