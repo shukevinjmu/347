@@ -1,42 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset='utf-8'>
-    <title>Kevin Shu's Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
-
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blog Home Page!</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <script src='index.js' defer></script>
 </head>
 
 <body>
-    <div class="navbar-container">
-        <ul class="navbar">
-            <li class="navbar-link"><a href="index.html">Index</a></li>
-            <li class="navbar-link"><a href="blog4.html">Recent Post</a></li>
-            <li class="navbar-link"><a href="index.html">About</a></li>
-            <li class="navbar-link"><a href="index.html">Contact</a></li>
-            <li class="seperator">———————</li>
-            <li class="navbar-link"><a href="blog1.html">Blog 1</a></li>
-            <li class="navbar-link"><a href="blog2.html">Blog 2</a></li>
-            <li class="navbar-link"><a href="blog3.html">Blog 3</a></li>
-            <li class="navbar-link"><a href="blog4.html">Blog 4</a></li>
-        </ul>
+
+    <div class="navbar">
+        <button id="side-panel-button" onclick="openPanel()">☰</button>
+        <a class="active" href="index.html">Home</a>
+        <a href="index.html">Contact</a>
+        <a href="blog4.html">Recent Post</a>
+
     </div>
-    <div class="title-container">
-        <h1>Welcome to my Blog!</h1>
-        <p>Currently, this page has a temporary layout that I plan to change later on!
-            Some of the links may be dead, but I intend to leave them there as a reminder
-            to flesh out my work.
-        </p>
-        <p>At the moment, please use the nav-bar on the left to see my blog-posts!</p>
-        <p> - Kevin Shu, CS 347 section 1</p>
+    <div class="side-panel" id="panel" >
+        <div class="side-panel-content">
+            <h1 class = non-clickable>Blogs:</h1>
+            <ul>
+                <li>
+                    <a class="link" href="blog1.html">Blog 1</a>
+                </li>
+                <li>
+                    <a class="link" href="blog2.html">Blog 2</a>
+                </li>
+                <li>
+                    <a class="link" href="blog3.html">Blog 3</a>
+                </li>
+                <li>
+                    <a class="link" href="blog4.html">Blog 4</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <div class="bluebg">
+    <div class ="main-content center">
+
+        <h1>Welcome!</h1>
+        <p>This site was built to house my blog posts! You will find links to my blog post <br>
+        on the sidebar by clicking ☰ or you can click the Recent Post button above.</p>
+
 
     </div>
 </body>
-
-
 </html>
