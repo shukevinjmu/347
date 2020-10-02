@@ -23,7 +23,7 @@
             <li class="navbar-link"><a href="blog1.html">Blog 1</a></li>
             <li class="navbar-link"><a href="blog2.html">Blog 2</a></li>
             <li class="navbar-link"><a href="blog3.html">Blog 3</a></li>
-            <li class="navbar-link"><a href="blog4.html">Blog 3</a></li>
+            <li class="navbar-link"><a href="blog4.html">Blog 4</a></li>
         </ul>
     </div>
 
@@ -32,12 +32,47 @@
             <h1>Blog post #4: CAPTCHA</h1>
 
             <p>
+                Today's blog post has to do with CAPTCHAs. To start, I went to <a href="https://developers.google.com/recaptcha/docs/versions">Google's recaptcha</a> website. <br>
+                I thought it might be helpful to get familiar with some of its implementations. For today's purposes, I did not validate the captcha with google's webserver.
+            </p>
+            <p>
+                I went to <a href="https://www.google.com/recaptcha/admin/create">this</a> site and registered a reCAPTCHA v2. This gave me a public/private key that would
+                enable its usage on my website. Since I did not redirect my blogpost page to my
+                domain name, I had to uncheck the following:
+            </p>
+            <img src="images\recaptcha.png" alt="verify origin of reCAPTCHA solutions">
+            <p>
+                Once completed, I followed the instructions, and tried to enable the "I'm not a robot" checkbox captcha. 
+            </p>
+            <pre>
+                <code>
+&lt;script src='https://www.google.com/recaptcha/api.js' defer async>&lt;/script&gt;
+&lt;div class="g-recaptcha" data-sitekey="site key">&lt;/div&gt;
+                </code>
+            </pre>
+            <p>With the above lines, I was able to apply the reCAPTCHA to the page. Next, I had to implement a way to see if the captcha was verified.<br>
+                <a href=https://developers.google.com/recaptcha/docs/verify>This</a> page detailed on how I would accomplish this. Since I don't know
+                anything about PHP, I went with the following js:
+            </p>
+            <pre>
+                <code>
+grecaptcha.getResponse();
+                </code>
+            </pre>
+            <p>
+                With this bit of JavaScript, all I had to do was add some type of event listener and verify that the response was valid.<br>
+                Below, you will find the implementation.
+            </p>
+            <p>
                 <div class="g-recaptcha" data-sitekey="6LfdqtIZAAAAAMjwo-Z4JeXwmnsG3dRzTr2swigl"></div>
             </p>
             <p id=captcha-verify>
                 CLICK THE CAPTCHA!
             </p>
-            <button id="submit">Hello</button>
+            <button id="submit">Then click here!</button>
+            <p>
+                Looking through this gave me an idea of how to implement a captcha, but more importantly, it made me realize that there is a lot I don't know (PHP &#128542;). 
+            </p>
             <p>
                 - Kevin Shu, CS 347 section 1
             </p>
