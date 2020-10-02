@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='blog5.css'>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="navbar.js"></script>
+</head>
+
+<body>
+
+    <div id='navbar-load'> </div>
+    <div class="main-content">
+        <div class="blog-content">
+            <h1>Blog post #5: JavaScript to load HTML</h1>
+            <p>
+                Today's blog post is focused on loading HTML with javascript. The reason I wanted to do this is because I've been manually updating
+                my blog's format(navbar/links) for each blog post which is tedious. <br>
+                While you briefly showcased this in one of your videos, I thought it would a good exercise to try for myself.
+        
+            </p>
+            <p>
+                While googling, I saw that one issue with doing this happens when users block JavaScript. I imagine for robustness, it would be good
+                to not do this for important content.
+            </p>
+
+            <p>
+                <a href="https://www.tutorialspoint.com/How-to-load-external-HTML-into-a-div-using-jQuery">One method</a> I found was using jQuery:
+            </p>
+            <pre>
+                <code>
+$(document).ready(function(){
+   
+    $('#content').load("new.html");
+                     
+});
+                </code>
+            </pre>
+
+            <p>
+                This appears to be the shortest(in code length) way which makes sense given that its jQuery. <br>
+                For the sake of the post though, I want to search for the pure JavaScript solution.
+            </p>
+            <p>
+                I found my answer in <a href=https://stackoverflow.com/questions/3535055/load-html-file-contents-to-div-without-the-use-of-iframes/3535126> this</a> stackoverflow
+                post.<br>
+                I then implemented it to replace my navbar as shown below: 
+            </p>
+
+            <pre>
+                <code>
+
+                </code>
+            </pre>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
