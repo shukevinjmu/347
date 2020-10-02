@@ -43,6 +43,8 @@ pre code{
     background-color: #eee;
     border: 1px solid #999;
     width: 70%;
+    overflow-x: auto;
+    word-wrap: normal;
     display: block;
     padding: 20px;
 }

@@ -64,7 +64,7 @@ html, body{
 .main-content{
     display: flex;
     flex-direction: column;
-    font-size: 1em;
+    font-size: 1.2em;
     padding: 6vh 17vw;
 }
 
@@ -122,12 +122,25 @@ html, body{
 .link:hover{
     color:#259a7a
 }
+img{
+    width: 200px;
+
+    border: 1px solid black;
+    background-size: contain;
+}
 
 @media only screen and (max-width:1200px){
     .side-panel{
         display: none;
     }
-    #search{
-        display: none;
+    .main-content{
+        padding: 6vh 10vw;
     }
+    .blog-content > img{
+        margin: 10px;
+        border: solid black 2px;
+        width: 95%;
+    }
+
+    
 }
