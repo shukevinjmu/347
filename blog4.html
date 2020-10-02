@@ -9,6 +9,8 @@
     <link rel='stylesheet' type='text/css' media='screen' href='blog4.css'>
     <link rel="stylesheet" href="blog.css">
     <script src='https://www.google.com/recaptcha/api.js' defer async></script>
+    <script src='libraries/confetti.js' defer async></script>
+    <script src="blog4.js" defer async></script>
 
 </head>
 
@@ -69,7 +71,7 @@ grecaptcha.getResponse();
             <p id=captcha-verify>
                 CLICK THE CAPTCHA!
             </p>
-            <button id="submit">Then click here!</button>
+            <button id="submit" onclick="startConfetti();">Then click here!</button>
             <p>
                 Looking through this gave me an idea of how to implement a captcha, but more importantly, it made me realize that there is a lot I don't know (PHP &#128542;). 
             </p>
@@ -83,6 +85,7 @@ grecaptcha.getResponse();
 
 
 </body>
-<script src="blog4.js"></script>
+
+
 
 </html>
