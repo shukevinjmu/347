@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="index.css">
     
-    <script async defer src="index.js"></script>
+    <script defer src="index.js"></script>
+    <script defer src="navbar.js"></script>
 </head>
 
 <body>
     <div class="navbar">
-        <button id="side-panel-button">☰</button>
+        <button id="side-panel-button" onclick="openPanel()">☰</button>
         <div id='navbar-load'> </div>
     </div>
 
@@ -66,5 +67,4 @@ $(document).ready(function(){
 
 
 </body>
-<script src="navbar.js"></script>
 </html>
