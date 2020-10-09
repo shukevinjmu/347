@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Blog 5 - Kevin Shu</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="index.css">
@@ -17,14 +17,28 @@
         <button id="side-panel-button" onclick="openPanel()">☰</button>
         <a href="index.html">Home</a>
         <a href="index.html">Contact</a>
-        <a href="blog5.html">Recent Post</a>
+        <a class="active" href="blog5.html">Recent Post</a>
     </div>
 
     <div class="side-panel" id="panel">
         <div class="side-panel-content">
             <h1 class=non-clickable>Blogs:</h1>
             <ul>
-                <div id="navbar-load"></div>
+                <li>
+                    <a class="link" href="blog1.html">Blog 1</a>
+                </li>
+                <li>
+                    <a class="link" href="blog2.html">Blog 2</a>
+                </li>
+                <li>
+                    <a class="link" href="blog3.html">Blog 3</a>
+                </li>
+                <li>
+                    <a class="link" href="blog4.html">Blog 4</a>
+                </li>
+                <li>
+                    <a class="link" href="blog5.html">Blog 5</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -32,9 +46,12 @@
 
     <div class="main-content">
         <div class="blog-content">
-            <h1>Blog post #5: JavaScript to load HTML</h1>
+            <h1>Blog post #5: JavaScript for Centralized Navbar?</h1>
+            <p>***NOTE: To provide context to today's blog post, I wanted to let you know that I write these blogs while actively researching my desired goal to
+                take the reader through the my thought process. As such, not everything always works out.
+            </p>
             <p>
-                Today's blog post is focused on loading HTML with javascript. The reason I wanted to do this is because
+                Today's blog post is focused on trying to load HTML with javascript for my navbar. The reason I wanted to do this is because
                 I've been manually updating
                 my blog's format(navbar/links) for each blog post which is tedious. <br>
                 While you briefly showcased this in one of your videos, I thought it would a good exercise to try for
@@ -63,7 +80,7 @@ $(document).ready(function(){
 
             <p>
                 This appears to be the shortest(in code length) way which makes sense given that its jQuery. <br>
-                For the sake of the post though, I want to search for the pure JavaScript solution.
+                For the sake of the post though, I wanted to search for a pure JavaScript solution.
             </p>
             <p>
                 I found my answer in <a
@@ -82,8 +99,43 @@ fetch('navbar.html')
                 </code>
             </pre>
             <p>
-                The only issue I had with this is that it broke references I had to the side-panel in my JavaScript file.
+                The above code served its purpose to load the html within the targeted div id. The only problem was that
+                there were a lot of problems. <br><br>
+                Initially, I put the bulk of my existing navbar/sidebar code within the navbar.html document. <br>
+                However, through doing this, I found out that it broke most of my DOM JS references/messed with existing
+                CSS files.<br>
+                In addition, the content of the page would not load locally, which made me have to have a running site
+                to check it.
             </p>
+
+            <p>
+                After about an hour of googling solutions to these issues, I realized the problem at hand was bigger
+                than expected for this
+                blog post. <br> Although, for all of it to not be in vain, I decided to re-evaluate my goal.
+
+            </p>
+
+            <p>
+                I then found <a
+                    href="https://webmasters.stackexchange.com/questions/114744/loading-an-external-html-file-into-another-does-it-have-an-affect-on-seo">this</a>
+                page where a similar user tried to implement what I did.
+            </p>
+
+            <p>
+                The top reply noted that : "JS includes can be problematic for several reasons - search engines don't
+                always process them properly, they are often not accessible to visitors using alternative technologies
+                like screen readers, and like you said - this particular version isn't even outputting actual links."<br>
+                <br> This made me realize that what I was doing was simply for the sake of convenience, and that I probably
+                shouldn't try to load HTML with JavaScript for the purpose of a centralized navbar. 
+            </p>
+            <p>
+                Although this blog post wasn't a success, I felt that it was still suitable since I taught me to not tunnel-vision/assume 
+                functionality with my existing knowledge. Google exists for a reason, and I should probably use it before I start a project.
+            </p>
+            <p>
+                - Kevin Shu, CS 347 section 1
+            </p>
+            <div class=end-break></div>
         </div>
     </div>
 
