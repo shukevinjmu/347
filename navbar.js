@@ -1,11 +1,12 @@
 fetch('navbar.html')
   .then(data => data.text())
   .then(html => document.getElementById('navbar-load').innerHTML = html);
-  const sidePanelButton = document.getElementById("side-panel-button")
-  const sidePanel = document.getElementById("panel");
+
+const sidePanelButton = document.getElementById("side-panel-button");
+const sidePanel = document.getElementById("panel");
 
 
-  sidePanelButton.addEventListener("click", () =>{
+sidePanelButton.addEventListener("click", () =>{
       if (window.matchMedia('screen and (max-width: 1200px)').matches) {
           if(sidePanel.style.width > 1 + '%'){
               sidePanel.style.width = 0;
@@ -34,5 +35,5 @@ fetch('navbar.html')
       }
   
   
-  });
+});
   
