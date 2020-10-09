@@ -8,8 +8,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="index.css">
-    
-    <script defer src="index.js"></script>
     <script defer src="navbar.js"></script>
 </head>
 
@@ -53,15 +51,21 @@ $(document).ready(function(){
             <p>
                 I found my answer in <a href=https://stackoverflow.com/questions/3535055/load-html-file-contents-to-div-without-the-use-of-iframes/3535126> this</a> stackoverflow
                 post.<br>
-                I then implemented it to replace my navbar as shown below: 
+                I then tried to replace my navbar with this: 
             </p>
 
             <pre>
                 <code>
+fetch('navbar.html')
+  .then(data => data.text())
+  .then(html => document.getElementById('navbar-load').innerHTML = html);
 
                 </code>
             </pre>
-
+            <p>
+                The only issue I had with this is that it broke my JavaScript DOM references for the side panel.
+                This meant that when I clicked the button, the file did not work.
+            </p>
         </div>
     </div>
 
