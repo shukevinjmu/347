@@ -1,7 +1,8 @@
 const sidePanel = document.getElementById("panel");
 const sidePanelButton = document.getElementById("side-panel-button")
 
-function openPanel(){
+
+sidePanelButton.addEventListener("click", () =>{
     if (window.matchMedia('screen and (max-width: 1200px)').matches) {
         if(sidePanel.style.width > 1 + '%'){
             sidePanel.style.width = 0;
@@ -29,6 +30,12 @@ function openPanel(){
         }
     }
 
+
+});
+
+
+function openPanel(){
+    
 
     
 }
