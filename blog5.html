@@ -6,41 +6,53 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet"  type='text/css' media='screen' href="blog.css">
-    <link rel="stylesheet"  type='text/css' media='screen' href="index.css">
+    <link rel="stylesheet" type='text/css' media='screen' href="blog.css">
+    <link rel="stylesheet" type='text/css' media='screen' href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="navbar.js"></script>
 
     <script defer src="index.js"></script>
-    <script>
-        $(document).ready(function(){
-         $('#navbar-load').load("navbar.html");
-        });
-    </script>
 </head>
 
 <body>
     <div class="navbar">
         <button id="side-panel-button" onclick="openPanel()">☰</button>
-        <div id='navbar-load'> </div>
+        <a href="index.html">Home</a>
+        <a href="index.html">Contact</a>
+        <a href="blog5.html">Recent Post</a>
+
+
+        <div class="side-panel" id="panel">
+            <div class="side-panel-content">
+                <h1 class=non-clickable>Blogs:</h1>
+                <ul>
+                    <div id="navbar-load"></div>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
     <div class="main-content">
         <div class="blog-content">
             <h1>Blog post #5: JavaScript to load HTML</h1>
             <p>
-                Today's blog post is focused on loading HTML with javascript. The reason I wanted to do this is because I've been manually updating
+                Today's blog post is focused on loading HTML with javascript. The reason I wanted to do this is because
+                I've been manually updating
                 my blog's format(navbar/links) for each blog post which is tedious. <br>
-                While you briefly showcased this in one of your videos, I thought it would a good exercise to try for myself.
-        
+                While you briefly showcased this in one of your videos, I thought it would a good exercise to try for
+                myself.
+
             </p>
             <p>
-                While googling, I saw that one issue with doing this happens when users block JavaScript. I imagine for robustness, it would be good
+                While googling, I saw that one issue with doing this happens when users block JavaScript. I imagine for
+                robustness, it would be good
                 to not do this for important content.
             </p>
 
             <p>
-                <a href="https://www.tutorialspoint.com/How-to-load-external-HTML-into-a-div-using-jQuery">One method</a> I found was using jQuery:
+                <a href="https://www.tutorialspoint.com/How-to-load-external-HTML-into-a-div-using-jQuery">One
+                    method</a> I found was using jQuery:
             </p>
             <pre>
                 <code>
@@ -57,9 +69,11 @@ $(document).ready(function(){
                 For the sake of the post though, I want to search for the pure JavaScript solution.
             </p>
             <p>
-                I found my answer in <a href=https://stackoverflow.com/questions/3535055/load-html-file-contents-to-div-without-the-use-of-iframes/3535126> this</a> stackoverflow
+                I found my answer in <a
+                    href=https://stackoverflow.com/questions/3535055/load-html-file-contents-to-div-without-the-use-of-iframes/3535126>
+                    this</a> stackoverflow
                 post.<br>
-                I then tried to replace my navbar with this: 
+                I then tried to replace my navbar with this:
             </p>
 
             <pre>
@@ -71,11 +85,12 @@ fetch('navbar.html')
                 </code>
             </pre>
             <p>
-                The only issue I had with this is that it broke references I had to the side-panel in my CSS/JS files.
+                The only issue I had with this is that it broke references I had to the side-panel in my JavaScript file.
             </p>
         </div>
     </div>
 
 
 </body>
+
 </html>
