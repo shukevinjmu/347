@@ -86,6 +86,7 @@ html, body{
 }
 
 .side-panel{
+    white-space: nowrap;
     width:0vw;
     position: fixed;
     height: 100vh;

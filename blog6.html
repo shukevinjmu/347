@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blog 6 - Kevin Shu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="index.css">
+    <script src='index.js' defer></script>
+    </script>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <button id="side-panel-button" onclick="openPanel()">☰</button>
+        <a href="index.html">Home</a>
+        <a href="index.html">Contact</a>
+        <a href="blog5.html">Recent Post</a>
+
+    </div>
+    <div class="side-panel" id="panel" >
+        <div class="side-panel-content">
+            <h1 class = non-clickable>Blogs:</h1>
+            <ul>
+                <li>
+                    <a class="link" href="blog1.html">Blog 1</a>
+                </li>
+                <li>
+                    <a class="link" href="blog2.html">Blog 2</a>
+                </li>
+                <li>
+                    <a class="link" href="blog3.html">Blog 3</a>
+                </li>
+                <li>
+                    <a class="link" href="blog4.html">Blog 4</a>
+                </li>
+                <li>
+                    <a class="link" href="blog5.html">Blog 5</a>
+                </li>
+                <li>
+                    <a class="link" href="blog6.html">Blog 6</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="blog-content">
+            <h1>Blog post #6: Node.js & Socket.IO</h1>
+            <p>
+                For this blog post, I decided to look further into Node.js. To do so, I first went <a href="https://nodejs.org/en/about/">here</a> which explained the purpose
+                of it. To my surprise, this article mentioned that "Thread-based networking is relatively inefficient and very difficult to use", which I wholeheartedly agree
+                with. Currently, I am taking CS462 which involved thread-based networking for about 1/3 of its content. Knowing that other people have already created tools to assist
+                is reassuring.
+            </p>
+            <p>
+                After learning this, I decided to compare Node.js with a small assignment from CS462 that involved multiple threads reading/writing to a TCP socket.
+                When looking up how to do message passing, I found that most resources pointed to <a href="https://socket.io/">socket.io</a>.
+            </p>
+            <p>
+                To start I went to Socket.IO's <a href=https://socket.io/get-started/chat>get-started</a> page. Here, I found the a code bit to send a message from the server to clients.
+            </p>
+            <pre>
+                <code>
+io.on('connection', (socket) => {
+    socket.on('chat message', (msg) => {
+        io.emit('chat message', msg);
+    });
+});
+                </code>
+            </pre>
+
+            <p>
+                If I compare this to an equivalent part of my CS462 assignment...
+            </p>
+            <pre>
+                <code>
+    try{
+        ss = new ServerSocket(22805);
+        ss.setSoTimeout(2000);
+        while(valid.get()){
+           try{
+               s = ss.accept();
+               in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+               out = new PrintWriter(s.getOutputStream());
+               line = in.readLine();
+               if(OvenRecipeDatabase.contains(line)){
+                  out.println(“OK”);
+               } else {
+                  out.println(“NO”);
+               }
+               out.flush();
+               s.close();
+           }
+           catch(SocketTimeoutException ste){
+               // does nothing
+            } // end of inner try-catch
+        } // end of while loop
+      } catch (IOException e){
+    } // end of outer try-catch
+
+                </code>
+            </pre>
+
+            <p>
+                Socket.IO is clearly more simple and thus less error-prone. If I wrote the above code in C, it would be even longer.
+            </p>
+            <p>
+                After reading the rest of the get-started page, I'm really glad that tools like Node.js and Socket.IO exist.<br>
+                Learning more about these tools reinforces the idea that it isn't always necessary to reinvent the wheel. While I'm sure that CS462's content
+                has its uses, it's nice that there are tools to make things easier.
+
+            </p>
+            <p>
+                - Kevin Shu, CS 347 section 1
+            </p>
+
+            <div class=end-break></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
