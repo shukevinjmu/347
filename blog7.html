@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blog 7 - Kevin Shu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="index.css">
+    <script src='index.js' defer></script>
+    </script>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <button id="side-panel-button" onclick="openPanel()">☰</button>
+        <a href="index.html">Home</a>
+        <a href="index.html">Contact</a>
+        <a class="active" href="blog7.html">Recent Post</a>
+
+    </div>
+    <div class="side-panel" id="panel">
+        <div class="side-panel-content">
+            <h1 class=non-clickable>Blogs:</h1>
+            <ul>
+                <li>
+                    <a class="link" href="blog1.html">Blog 1</a>
+                </li>
+                <li>
+                    <a class="link" href="blog2.html">Blog 2</a>
+                </li>
+                <li>
+                    <a class="link" href="blog3.html">Blog 3</a>
+                </li>
+                <li>
+                    <a class="link" href="blog4.html">Blog 4</a>
+                </li>
+                <li>
+                    <a class="link" href="blog5.html">Blog 5</a>
+                </li>
+                <li>
+                    <a class="link" href="blog6.html">Blog 6</a>
+                </li>
+                <li>
+                    <a class="link" href="blog7.html">Blog 7</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="blog-content">
+            <h1>Blog post #7: Redux</h1>
+            <p>
+                Like you mentioned in your lecture 19 post, I decided to investigate Redux.
+            </p>
+            <p>
+                First, I went and searched for why I should use Redux in the first place. I found <a
+                    href="https://blog.logrocket.com/when-and-when-not-to-use-redux-41807f29a7fb/">this</a>
+                article which covered what you mentioned in your lecture about a store keeping the application's state
+                along with a how-to-use recap. One thing I liked about the article is
+                that it also talked about when not to use Redux.
+            </p>
+            <p>
+                Next, like your mentioned, I looked for sources that use the newer hook system(useSelector and
+                useDispatch). However, it was at this point that I realized I don't
+                really know what a hook is. I remembered watching your videos implementing hooks, but I never really
+                investigated further.
+            </p>
+            <p>
+                I went to the reactjs page and read their <a href="https://reactjs.org/docs/hooks-overview.html">Hooks
+                    at a Glance</a> page which caught me up along with their
+                <a href="https://reactjs.org/docs/hooks-reference.html">api reference</a> page. Their overview
+                summarized it nicely as "Hooks are functions that let you 'hook into'
+                React state and lifecycle features from function components. Hooks don’t work inside classes — they let
+                you use React without classes".
+            </p>
+
+            <p>
+                At this point I felt confident to tackle Redux's <a href="https://react-redux.js.org/api/hooks">hooks
+                    api page</a>. <br>
+                After reading up on it, I found <a
+                    href="https://thoughtbot.com/blog/using-redux-with-react-hooks">this</a> article which did a nice
+                side-by-side comparison of using Redux Hooks versus the previous connect way.
+            </p>
+            <p>
+                Below, you will find the code comparison provided by the <a
+                    href="https://thoughtbot.com/blog/using-redux-with-react-hooks">previously mentioned article</a>.
+
+            </p>
+
+            <pre>
+                <code>
+import React from "react";
+import { connect } from "react-redux";
+import { addCount } from "./store/counter/actions";
+
+export const Count = ({ count, addCount }) => {
+  return (
+    &lt;main>
+    &lt;div>Count: {count}&lt;/div>
+    &lt;button onClick={addCount}>Add to count&lt;/button>
+    &lt;/main>
+  );
+};
+
+const mapStateToProps = state => ({
+  count: state.counter.count
+});
+
+const mapDispatchToProps = { addCount };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Count);
+                </code>
+            </pre>
+
+
+            <p>
+                Versus the React Redux Hook
+            </p>
+
+            <pre>
+                <code>
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addCount } from "./store/counter/actions";
+
+export const Count = () => {
+  const count = useSelector(state => state.counter.count);
+  const dispatch = useDispatch();
+
+  return (
+    &lt;main>
+    &lt;div>Count: {count}&lt;/div>
+    &lt;button onClick={() => dispatch(addCount())}>Add to count&lt;/button>
+    &lt;/main>
+  );
+};
+                </code>
+            </pre>
+
+            <p>
+                Visually, React Redux Hooks are a lot cleaner and more concise. To me, this means that it is less
+                error-prone which is great for me since this
+                is my first time working with React in general.
+            </p>
+
+            <p>
+                Looking all of this up made me realize that web development is a lot different from the coding I've done
+                at JMU. Most classes tended to avoid using
+                any type of 'non-official' library or framework. Having the ability to quickly learn these is probably more relevant
+                than what I've come to expect from classes which I am appreciative of.
+
+            </p>
+            <p>
+                - Kevin Shu, CS 347 section 1
+            </p>
+
+            <div class=end-break></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
