@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blog 8 - Kevin Shu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="index.css">
+    <script src='index.js' defer></script>
+    </script>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <button id="side-panel-button" onclick="openPanel()">☰</button>
+        <a href="index.html">Home</a>
+        <a href="index.html">Contact</a>
+        <a class="active" href="blog8.html">Recent Post</a>
+
+    </div>
+    <div class="side-panel" id="panel">
+        <div class="side-panel-content">
+            <h1 class=non-clickable>Blogs:</h1>
+            <ul>
+                <li>
+                    <a class="link" href="blog1.html">Blog 1</a>
+                </li>
+                <li>
+                    <a class="link" href="blog2.html">Blog 2</a>
+                </li>
+                <li>
+                    <a class="link" href="blog3.html">Blog 3</a>
+                </li>
+                <li>
+                    <a class="link" href="blog4.html">Blog 4</a>
+                </li>
+                <li>
+                    <a class="link" href="blog5.html">Blog 5</a>
+                </li>
+                <li>
+                    <a class="link" href="blog6.html">Blog 6</a>
+                </li>
+                <li>
+                    <a class="link" href="blog7.html">Blog 7</a>
+                </li>
+                <li>
+                    <a class="link" href="blog8.html">Blog 8</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="blog-content">
+            <h1>Blog post #8: API calls/Grabbing information</h1>
+            <p>
+                Today's blog post revolves around doing research for Project 2.
+            </p>
+            <p>
+                To breifly summarize, my project is basically an all-in-one news feed page. One thing I wanted
+                to include in this was an option to allow youtube videos to appear on this page.
+            </p>
+
+            <p>First, I went to <a href="https://developers.google.com/youtube/v3/getting-started"> here</a> to look at what I was dealing with.
+                I followed the instructions on the page to obtain an API key, and enabled the <a href="https://developers.google.com/youtube/v3">YouTube Data API v3</a>.
+            </p>
+
+            <p>
+                Next, I searched for how to grab the information I needed.
+            </p>
+            <p>
+                After a few minutes of looking, 
+                I found <a href=https://stackoverflow.com/questions/30475309/get-youtube-trends-v3-country-wise-in-json>this</a> helpful stackoverflow answer.
+                To summarize, it broke down the query options: part, chart, regionCode, key, and maxResults.
+            </p>
+
+            <p>
+                Now that I had this understanding, I was able to get the results I needed. <br>
+                For now, I wanted to be able to get the 'trending' page for the USA. Specifically, I needed to get the video id to 
+                embed it into the website.
+            </p>
+            <p>
+                part = contentDetails<br>
+                chart = mostPopular<br>
+                regionCode = US<br>
+                maxResults = 5<br>
+            </p>
+            <p>
+                While unsafe for my API key, <a href=https://www.googleapis.com/youtube/v3/videos?part=contentDetails&chart=mostPopular&regionCode=US&maxResults=5&key=AIzaSyD1185OYX_nWpeUL0brDyGQaILu_ReEBaQ>
+                here</a> are the results.
+            </p>
+            <p>
+                One thing I need to fully figure out is how to protect my API keys. Briefly searching brought me <a href=https://developers.google.com/maps/api-key-best-practices#:~:text=You%20can%20secure%20API%20keys,unexpected%20charges%20on%20your%20account.>
+                here</a>, but I have yet to fully comprehend it. This might be a good thing to research in my next blog post as I will need to call multiple APIs in my project.
+            </p>
+
+            <p>
+                Next, for my project, I also wanted to be able to grab the top x amount of posts from a reddit subreddit.<br>
+                This process was far more simple since you don't need an API key to grab data from reddit.
+            </p>
+            <p>
+                <a href=https://www.reddit.com/r/food/top/.json?count=20>https://www.reddit.com/r/food/top/.json?count=20</a> is an example of how
+                you can easily get a json file. The previous link gets the top 20 results from the /r/food subreddit.
+            </p>
+            <p>
+                Most information I gathered either came from their <a href=https://www.reddit.com/wiki/api>api page</a> or from
+                the <a href="https://www.reddit.com/r/redditdev/"> redditdev subreddit</a>.
+            </p>
+
+            <p>
+                After doing this research for my project, I realized that it's really handy that all of this information is freely available. It would have been much harder/annoying
+                to make some sort of script that scraped from the normal webpages.
+            </p>
+
+            <p>
+                - Kevin Shu, CS 347 section 1
+            </p>
+
+            <div class=end-break></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
